@@ -4,12 +4,13 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import dayjs from 'dayjs';
-import { NotionAPI } from '../lib/notion-client';
+import * as dayjs from 'dayjs';
+import { ExtendedRecordMap } from 'notion-types';
 import { Repository } from 'typeorm';
+
+import { NotionAPI } from '../lib/notion-client';
 import { NotionPageEntity } from './entites/notionPage.entity';
 import { idToUuid } from './utils/idToUuid';
-import { ExtendedRecordMap } from 'notion-types';
 
 type PageDto = {
   pageId: string;
